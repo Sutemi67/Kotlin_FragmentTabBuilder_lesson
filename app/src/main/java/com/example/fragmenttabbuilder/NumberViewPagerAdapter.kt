@@ -14,10 +14,6 @@ class NumberViewPagerAdapter(
     }
 
     override fun createFragment(position: Int): Fragment {
-        return when (position) {
-            0 -> Fragment1.newInstance(position + 1)
-            1 -> Fragment1.newInstance(position + 1)
-            else -> Fragment1.newInstance(position + 1)
-        }
+        return Fragment1.newInstance(position + 1)
     }
 }

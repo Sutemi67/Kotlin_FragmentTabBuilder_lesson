@@ -25,11 +25,7 @@ class MainActivity : AppCompatActivity() {
         }
         binding.viewPager.adapter = NumberViewPagerAdapter(supportFragmentManager, lifecycle)
         tabMediator = TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
-            when (position) {
-                0 -> tab.text = "Page 1"
-                1 -> tab.text = "Page 2"
-                else -> tab.text = "Page 3"
-            }
+            tab.text = "Page${position + 1}"
         }
         tabMediator.attach()
     }
